@@ -1,0 +1,171 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.19" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.25.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.20" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.20" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.6.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.2" />
+    <PackageReference Include="Microsoft.IdentityModel.JsonWebTokens" Version="7.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\" />
+    <None Remove="DataAccessLayer\" />
+    <None Remove="Model\" />
+    <None Remove="Views\" />
+    <None Remove="Views\CrudOperation\" />
+    <None Remove="Views\Home\" />
+    <None Remove="Views\Auth\" />
+    <None Remove="Middleware\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+    <Folder Include="DataAccessLayer\" />
+    <Folder Include="Model\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\CrudOperation\" />
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Auth\" />
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Contect.cshtml" />
+    <Content Remove="Views\AuthController\Read.cshtml" />
+    <Content Remove="Views\CrudOperation\Template.cshtml" />
+    <Content Remove="Views\CrudOperation\Ins.cshtml" />
+    <Content Remove="Views\CrudOperation\UpdateRecord.cshtml" />
+    <Content Remove="Views\CrudOperation\DeleteRecord.cshtml" />
+    <Content Remove="Views\Auth\GetToken.cshtml" />
+    <Content Remove="Views\Auth\ValidateToken.cshtml" />
+    <Content Remove="Views\CrudOperation\ReadWithJson.cshtml" />
+    <Content Remove="Views\CrudOperation\InsertRecord2.cshtml" />
+    <Content Remove="WEBapi.cshtml" />
+    <Content Remove="Views\Auth\Authorise.cshtml" />
+    <Content Remove="Views\CrudOperation\UserIndex.cshtml" />
+    <Content Remove="Views\Auth\AdminIndex.cshtml" />
+    <Content Remove="Views\CrudOperation\ViewRecord.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Contect.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Contect.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\UpdateRecord.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>UpdateRecord.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\DeleteRecord.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>DeleteRecord.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Auth\GetToken.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>GetToken.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Auth\ValidateToken.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>ValidateToken.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\ReadWithJson.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>ReadWithJson.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\InsertRecord.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>InsertRecord.cs</LastGenOutput>
+    </None>
+    <None Include="WEBapi.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>WEBapi.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Auth\Authorise.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>Authorise.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\UserIndex.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>UserIndex.cs</LastGenOutput>
+    </None>
+    <None Include="Views\Auth\AdminIndex.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>AdminIndex.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\StudentIndex.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>StudentIndex.cs</LastGenOutput>
+    </None>
+    <None Include="Views\CrudOperation\ViewRecord.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>ViewRecord.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Contect.cs">
+      <DependentUpon>Contect.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\Template.cs">
+      <DependentUpon>ReadRecord.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\Ins.cs">
+      <DependentUpon>Ins.cshtml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\CrudOperation\ReadRecord.cs">
+      <DependentUpon>ReadRecord.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\UpdateRecord.cs">
+      <DependentUpon>UpdateRecord.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\DeleteRecord.cs">
+      <DependentUpon>DeleteRecord.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Auth\GetToken.cs">
+      <DependentUpon>GetToken.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Auth\ValidateToken.cs">
+      <DependentUpon>ValidateToken.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\ReadWithJson.cs">
+      <DependentUpon>ReadWithJson.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\InsertRecord2.cs">
+      <DependentUpon>InsertRecord.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="WEBapi.cs">
+      <DependentUpon>WEBapi.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Auth\Authorise.cs">
+      <DependentUpon>Authorise.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\UserIndex.cs">
+      <DependentUpon>UserIndex.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Auth\AdminIndex.cs">
+      <DependentUpon>AdminIndex.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\ViewRecord.cs">
+      <DependentUpon>StudentIndex.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\CrudOperation\ViewRecord.cs">
+      <DependentUpon>ViewRecord.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\CrudOperation\ReadRecord.cshtml">
+      <Generator>RazorTemplatePreprocessor</Generator>
+      <LastGenOutput>ReadRecord.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+</Project>

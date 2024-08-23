@@ -1,0 +1,19 @@
+﻿@*The file will help you understand what is happening here.*@
+
+@*MVC Architecture:
+    Model: Consists of classes containng field information.
+    View:
+    Controller: Handels requests from the client (HTTP PUT, GET, POST), It never handels the data itself, simply calls on to DataAccessLayer
+    DataAccessLayer: It is where the brain of your code resides. (i.e methods realting to CRUD)(All DALs must have an interface)
+
+    Dependency Injection: is a way of initializing a class object.
+
+    ActionName: It is used to rename an ActiionMethod in runtime to avoid confusin while overloading. For instance if we have two Delete methods we might want to use ActionName
+    to rename one.
+
+    ActionSelectors:So even if i don't mention these selectors it will still work accordingly but if mentioned the method will only do that task. Secrity and  Specify HTTP Methods Explicitly
+    HttpHead:  Similar to GET, but it retrieves only the status line and header section of the response, without the response body
+    HttpOptions: Describes the communication options for the target resource. Clients can discover which HTTP methods are supported by the server for a given resource.
+
+    View is something made for controllers. Each Action method can have a view
+*@

@@ -1,0 +1,40 @@
+﻿@model CRUDmvc.Model.ReadJsonResponse
+
+
+<body style="background-color: black">
+
+    <h1 style="color:beige">Read With Json Records</h1>
+    @if (Model != null && Model.Message != null)
+    {
+        <p style="color: red;">@Model.Message</p>
+        <h2 style="color:white">Records</h2>
+        <ul>
+            @foreach (var record in Model.data)
+            {
+                <li style="color:white">@record.firstName @record.lastName: @record.major</li>
+            }
+        </ul>
+        <button onclick="location.href='/Home/Index';" type="button" class="btn btn-outline-danger">Return to Home</button>
+        }
+
+        else
+        {
+            <form asp-action="UpdateRecord" asp-controller="CrudOperation" method="post">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label" style="color: white">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="-"required>
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label" style="color: white">Age</label>
+                    <input type="text" class="form-control" id="age" name="Age" value="-" required>
+                </div>
+                <div class="mb-3">
+                    <label for="equality" class="form-label" style="color: white">Equality</label>
+                    <input type="text" class="form-control" id="equality" name="equality" value="'<', '>', '='" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+    }
+
+</body>
+

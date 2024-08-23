@@ -1,0 +1,33 @@
+﻿Rest is a set of principles that must be followed be WebAPI.
+
+launchSettings.json configures settings that are used when the application is started during development.
+appsettings.json stores application configuration settings that are used at runtime, it also consistis of numerous variables like
+    enviornmenrt variables, Database connection strings, Application scope global variables, Logging configurations, API keys,
+    and Custom application-specific settings
+
+Program.cs is the entrey point of the program, all the configurations are done in startup class.
+
+csproject file: talks about version of .net core and the different packages added
+
+Middleware: it is the piple that exsists before the Controller, all requests pass through here. Some common applications are:
+ - Routing
+ - Authentication
+ - Exception Page
+
+Methods:
+ - Run(): used for execution of middleware
+ - Use(): to add middleware
+ - Next(): to pass request to next middleware
+ - Map(): to map he middleware to a specific url
+
+ModelBinder: binds HTTP request data to parameters and properties
+
+Types of MiddleWare:
+- Request Handling Middleware
+- Authentication Middleware
+- Authorization Middleware
+- Error Handling Middleware
+- Response Handling Middleware
+- Logging and Diagnostics Middleware:  Logs details of incoming requests, such as method, URL, headers, and response status.
+- Custom Middleware
+- Session and State Management Middleware
