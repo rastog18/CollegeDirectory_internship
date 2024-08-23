@@ -1,16 +1,15 @@
 # College Directory System
 A college directory system using the MVC (Model-View-Controller) architecture, catering to four user types: Superadmin, Teacher, Student, and Anonymous.
 
+The video demonstrates the Role of a "teacher":
+https://github.com/user-attachments/assets/c4845097-e933-4c75-9220-71296fc5b319
+
 ## How It Works
 
 1. **User Interaction (View)**  
    Users interact with the system through the **View**. Here, their inputs and requests are captured and routed to the appropriate components.
 
 2. **Middleware Processing**  
-
-https://github.com/user-attachments/assets/c4845097-e933-4c75-9220-71296fc5b319
-
-
    Before reaching the controller, requests pass through a middleware pipeline where critical functions like authentication, authorization, and error handling are performed. This ensures secure and seamless operations.
 
 3. **User Credential Verification and Token Generation**  
